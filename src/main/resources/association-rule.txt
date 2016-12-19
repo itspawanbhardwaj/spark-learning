@@ -1,0 +1,72 @@
+1,Coke
+1,Beans
+1,Toilet paper
+2,Beans
+2,Pen
+2,Sheets
+2,Banana
+3,Beans
+3,Toilet paper
+4,Coke
+4,Pen
+4,Beans
+4,Banana
+4,Sheets
+5,Coke
+5,Toilet paper
+5,Beer
+5,Book
+6,Coke
+6,Beans
+6,Toilet paper
+6,Banana
+7,Coke
+7,Beans
+7,Beer
+8,Pen
+8,Banana
+8,Sheets
+9,Banana
+9,Beer
+9,Book
+10,Toilet paper
+10,Pen
+10,Beer
+11,Beans
+11,Toilet paper
+11,Pen
+11,Sheets
+12,Beans
+12,Pen
+12,Banana
+12,Computer
+12,Coke
+12,Banana
+12,Computer
+12,Watch
+13,Sheets
+13,Beer
+14,Pen
+14,Banana
+15,Coke
+15,Pen
+15,Banana
+15,Sheets
+16,Coke
+16,Banana
+16,Sheets
+16,Beer
+18,Beans
+18,Pen
+18,Banana
+18,Book
+19,Coke
+19,Beans
+19,Toilet paper
+19,Sheets
+20,Banana
+20,Computer
+21,Pen
+22,Beans
+22,Pen
+23,Coke

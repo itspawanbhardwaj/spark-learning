@@ -1,0 +1,19 @@
+
+// SORTING RDD
+http://stackoverflow.com/questions/40213304/how-to-ascending-sort-a-multiple-array-of-spark-rdd-by-any-column-in-scala#40213352
+Use RDD.sortBy:
+
+// sorting by second column (index = 1)
+val result: RDD[Array[Int]] = rdd.sortBy(_(1), ascending = true)
+
+The sorting function can also be written using Pattern Matching:
+
+val result: RDD[Array[Int]] = rdd.sortBy( {
+  case Array(a, b, c) => b /* choose column(s) to sort by */
+}, ascending = true)
+
+
+
+
+
+http://perldesignpatterns.com/?LazyEvaluation

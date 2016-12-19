@@ -1,0 +1,189 @@
+aggregate
+
+cartesian
+
+checkpoint
+
+coalesce, repartition
+
+cogroup [pair], groupWith [pair]
+
+collect, toArray
+
+collectAsMap [pair]
+
+combineByKey [pair]
+
+compute
+
+context, sparkContext
+
+count
+
+countApprox
+
+countByKey [pair]
+
+countByKeyApprox [pair]
+
+countByValue
+
+countByValueApprox
+
+countApproxDistinct
+
+countApproxDistinctByKey [pair]
+
+dependencies
+
+distinct
+
+first
+
+filter
+
+filterWith
+
+flatMap
+
+flatMapValues [pair]
+
+flatMapWith
+
+fold
+
+foldByKey [pair]
+
+foreach
+
+foreachPartition
+
+foreachWith
+
+generator, setGenerator
+
+getCheckpointFile
+
+preferredLocations
+
+getStorageLevel
+
+glom
+
+groupBy
+
+groupByKey [pair]
+
+histogram [Double]
+
+id
+
+intersection
+
+isCheckpointed
+
+iterator
+
+join [pair]
+
+keyBy
+
+keys [pair]
+
+leftOuterJoin [pair]
+
+lookup [pair]
+
+map
+
+mapPartitions
+
+mapPartitionsWithContext
+
+mapPartitionsWithIndex
+
+mapPartitionsWithSplit
+
+mapValues [pair]
+
+mapWith
+
+max
+
+mean [Double], meanApprox [Double]
+
+min
+
+name, setName
+
+partitionBy [Pair]
+
+partitioner
+
+partitions
+
+persist, cache
+
+pipe
+
+randomSplit
+
+reduce
+
+reduceByKey [Pair], reduceByKeyLocally[Pair], reduceByKeyToDriver[Pair]
+
+rightOuterJoin [Pair]
+
+sample
+
+saveAsHodoopFile [Pair], saveAsHadoopDataset [Pair], saveAsNewAPIHadoopFile [Pair]
+
+saveAsObjectFile
+
+saveAsSequenceFile [SeqFile]
+
+saveAsTextFile
+
+stats [Double]
+
+sortBy
+
+sortByKey [Ordered]
+
+stdev [Double], sampleStdev [Double]
+
+subtract
+
+subtractByKey [Pair]
+
+sum [Double], sumApprox[Double]
+
+take
+
+takeOrdered
+
+takeSample
+
+toDebugString
+
+toJavaRDD
+
+top
+
+toString
+
+union, ++
+
+unpersist
+
+values [Pair]
+
+variance [Double], sampleVariance [Double]
+
+zip
+
+zipPartitions
+
+zipWithIndex
+
+zipWithUniquId

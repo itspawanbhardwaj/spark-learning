@@ -1,0 +1,57 @@
+package com.edx.spark.shared.variables
+
+import org.apache.spark.sql.types.StructType
+import org.apache.spark.SparkContext
+import org.apache.spark.sql.types.StructField
+import org.apache.spark.sql.types.StringType
+import java.util.LinkedList
+import scala.collection.mutable.HashMap
+
+object Accumulators {
+  def main(args: Array[String]) {
+    val sc = new SparkContext("local", "DropTable")
+    val sqlContext = new org.apache.spark.sql.SQLContext(sc)
+
+    // Create an RDD
+    val people = sc.textFile("src/main/resources/people.txt")
+
+    // The schema is encoded in a string
+    val schemaString = "name age"
+
+    // Import Spark SQL data types and Row.
+    import org.apache.spark.sql._
+
+    // Generate the schema based on the string of schema
+    val schema =
+      StructType(
+        schemaString.split(" ").map(fieldName => StructField(fieldName, StringType, true)))
+
+    // Convert records of the RDD (people) to Rows.
+    val rowRDD = people.map(_.split(",")).map(p => Row(p(0), p(1).trim))
+
+    // Apply the schema to the RDD.
+    val peopleSchemaRDD = sqlContext.applySchema(rowRDD, schema)
+
+    // Register the SchemaRDD as a table.
+    peopleSchemaRDD.registerTempTable("people")
+
+    // SQL statements can be run by using the sql methods provided by sqlContext.
+
+    // The results of SQL queries are SchemaRDDs and support all the normal RDD operations.
+    // The columns of a row in the result can be accessed by ordinal.
+    println("People Table")
+
+    val resultsPeople = sqlContext.sql("SELECT name, age FROM people group by name , age")
+    val axisAcc = sc.accumulableCollection(HashMap[String, String]())
+    resultsPeople.rdd.map(row => {
+      var xAxis = ""
+      for (i <- 0 to row.size - 2)
+        xAxis = xAxis + row.get(i) + "-"
+      val xaxis = xAxis.substring(0, xAxis.size - 1)
+      val yaxis = row.get(row.size - 1).toString
+      axisAcc += (xaxis -> yaxis)
+    }).collect
+    println(axisAcc.value.keySet.toList);
+    println(axisAcc.value.values.toList);
+  }
+}
