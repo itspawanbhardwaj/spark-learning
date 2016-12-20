@@ -11,7 +11,7 @@ import com.esotericsoftware.kryo.Kryo
 
 object KryoSerializerEx {
   def main(args: Array[String]) = {
-    val sc = new SparkContext("local", "DropTable")
+    val sc = new SparkContext("local", "Kryo serializer example")
 
     val a = sc.parallelize(List(("a", 1), ("a", 5), ("b", 6), ("b", 3), ("c", 2)))
     a.reduceByKey((a, b) =>

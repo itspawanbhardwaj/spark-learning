@@ -5,7 +5,7 @@ import org.apache.spark.SparkContext
 object EdxGroupByKey {
   def main(args: Array[String]) {
 
-    val sc = new SparkContext("local", "filter")
+    val sc = new SparkContext("local", "Group by key")
     val lines = sc.parallelize(List((6, 2), (3, 4), (6, 6)))
      lines.groupByKey.collect.foreach(println)
   }

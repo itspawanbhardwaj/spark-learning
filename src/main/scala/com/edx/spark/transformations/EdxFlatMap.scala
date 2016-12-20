@@ -5,7 +5,7 @@ import org.apache.spark.SparkContext
 object EdxFlatMap {
   def main(args: Array[String]) {
 
-    val sc = new SparkContext("local", "filter")
+    val sc = new SparkContext("local", "Flat map")
     val b = sc.parallelize(List(2, 3, 4))
     val a = sc.parallelize(List("dog", "tiger", "lion", "cat", "panther", "eagle"), 2)
     /*applying map function*/

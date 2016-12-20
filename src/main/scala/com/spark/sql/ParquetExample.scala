@@ -23,10 +23,10 @@ object ParquetExample {
     val rowRDD = people.map(_.split(",")).map(p => Row(p(0), p(1).trim))
 
     // Apply the schema to the RDD.
-    val peopleSchemaRDD = sqlContext.applySchema(rowRDD, schema)
+    val df = sqlContext.applySchema(rowRDD, schema)
 
     // Register the SchemaRDD as a table.
-    peopleSchemaRDD.registerTempTable("people")
+    df.registerTempTable("people")
 
     // SQL statements can be run by using the sql methods provided by sqlContext.
     val results = sqlContext.sql("SELECT name FROM people")
@@ -35,6 +35,6 @@ object ParquetExample {
     // The columns of a row in the result can be accessed by ordinal.
     results.rdd.map(t => "Name: " + t(0)).collect().foreach(println)
     // saving schema to parquet file
-    //peopleSchemaRDD.saveAsParquetFile("src/main/resources/peopleTwo.parquet")
+    df.write.parquet("src/main/resources/peopleTwo.parquet")
   }
 }

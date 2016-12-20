@@ -6,7 +6,7 @@ import org.apache.spark.SparkContext
 object broadcastVariable {
 
   def main(args: Array[String]) = {
-    val sc = new SparkContext("local", "DropTable")
+    val sc = new SparkContext("local", "Broadcast variable")
     val sqlContext = new SQLContext(sc)
     val input1 = sc.textFile("src/main/resources/bdu/trips/*");
     val header1 = input1.first

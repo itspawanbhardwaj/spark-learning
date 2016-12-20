@@ -11,7 +11,7 @@ object WholeTextFIle {
     val sqlContext = new org.apache.spark.sql.SQLContext(sc)
 
     // Create an RDD
-    val people = sc.wholeTextFiles("/home/ideata/setup/sampledata/folderTest/*/*/*/*.csv")
+    val people = sc.wholeTextFiles("src/main/resources/*.csv")
 
     people.collect.foreach(println)
 

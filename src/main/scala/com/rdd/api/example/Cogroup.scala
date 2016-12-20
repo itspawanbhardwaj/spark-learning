@@ -12,8 +12,8 @@ object Cogroup {
 
     val e = b.map((_, "c"))
 
-   d.foreach(println)
-     val result = a.groupBy("");
+    d.foreach(println)
+    val result = a.groupBy("");
 
   }
 }

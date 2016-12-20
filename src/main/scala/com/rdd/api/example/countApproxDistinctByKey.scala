@@ -9,7 +9,6 @@ object countApproxDistinctByKey {
     val b = sc.parallelize(a.takeSample(true, 10000, 0), 20)
     val c = sc.parallelize(1 to b.count().toInt, 20)
     val d = b.zip(c)
-    //TODO: countApproxDistinctByKey not working 
-    // d.countApproxDistinctByKey(0.1).collect
+    d.countApproxDistinctByKey(0.1).collect.foreach(println)
   }
 }

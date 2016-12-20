@@ -10,14 +10,9 @@ object CollectAsMap {
     val v = sc.parallelize(List('a', 'b', 'c', 'd'))
     val b = a.zip(v)
 
-    val result = b //  b.collectAsMap
+    val result = b.collectAsMap
 
-    // result.foreach(println)
+    result.foreach(println)
 
-    println(b.collect);
-    // output:
-    // (2,2)
-    // (1,1)
-    // (3,3)
   }
 }

@@ -9,7 +9,7 @@ import org.apache.spark.SparkContext
  *  Review the slides or documentstion for the storage levels*/
 object caching {
   def main(args: Array[String]) = {
-    val sc = new SparkContext("local", "DropTable")
+    val sc = new SparkContext("local", "Caching example")
     val sqlContext = new SQLContext(sc)
     val input1 = sc.textFile("src/main/resources/bdu/trips/*");
     val header1 = input1.first

@@ -6,7 +6,7 @@ import org.apache.spark.sql.SQLContext
 
 object ReduceByKeyEx {
   def main(args: Array[String]) = {
-    val sc = new SparkContext("local", "DropTable")
+    val sc = new SparkContext("local", "Reduce by key")
     val sqlContext = new SQLContext(sc)
     val input1 = sc.textFile("src/main/resources/bdu/trips/*");
     val header1 = input1.first
@@ -26,11 +26,6 @@ object ReduceByKeyEx {
 
     val byStartTerminal = trips.keyBy(_.startStation)
     val durationByStart = byStartTerminal.mapValues(_.duration)
-
-    /* val firstTrip = byStartTerminal.groupByKey.mapValues(list => list.toList.sortBy(_.startDate.getTime()).head)
-    println(firstTrip.toDebugString)
-    firstTrip.take(10).foreach(println) //23sec
-*/
 
     val firstTrip = byStartTerminal.reduceByKey((a, b) => {
       a.startDate.before(b.startDate) match {

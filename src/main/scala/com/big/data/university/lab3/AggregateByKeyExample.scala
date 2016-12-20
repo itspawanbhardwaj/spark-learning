@@ -3,7 +3,7 @@ package com.big.data.university.lab3
 import org.apache.spark.sql.SQLContext
 import org.apache.spark.SparkContext
 
-object TestUtils {
+object AggregateByKeyExample {
 
   def main(args: Array[String]) {
     val sc = new SparkContext("local", "DropTable")

@@ -55,17 +55,15 @@ object DropTable {
 
     println("DESCRIBE TABLE")
 
-    sqlContext.sql("DESCRIBE true").collect.foreach(println)
-
-    /* println("uncache")
+    println("uncache")
     sqlContext.uncacheTable("people")
-    println("finish")*/
-    // println(sqlContext.dropTempTable("people"));
 
-    // val droppedResultsPeople = sqlContext.sql("SELECT * FROM people ")
+    println(sqlContext.dropTempTable("people"));
 
-    // droppedResultsPeople.collect().foreach(println)
-    
+    val droppedResultsPeople = sqlContext.sql("SELECT * FROM people ")
+
+    droppedResultsPeople.collect().foreach(println)
+
   }
-  
+
 }

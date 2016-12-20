@@ -9,7 +9,7 @@ import scala.collection.mutable.HashMap
 
 object Accumulators {
   def main(args: Array[String]) {
-    val sc = new SparkContext("local", "DropTable")
+    val sc = new SparkContext("local", "Accumulator")
     val sqlContext = new org.apache.spark.sql.SQLContext(sc)
 
     // Create an RDD

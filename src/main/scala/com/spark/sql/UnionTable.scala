@@ -30,17 +30,18 @@ object UnionTable {
     val rowRDD = people.map(_.split(",")).map(p => Row(p(0), p(1).trim))
 
     // Apply the schema to the RDD.
-    var peopleSchemaRDD = sqlContext.applySchema(rowRDD, schema)
+    val peopleSchemaRDD = sqlContext.applySchema(rowRDD, schema)
 
     // Register the SchemaRDD as a table.
-    peopleSchemaRDD.registerTempTable("people")
 
     // SQL statements can be run by using the sql methods provided by sqlContext.
 
     // The results of SQL queries are SchemaRDDs and support all the normal RDD operations.
     // The columns of a row in the result can be accessed by ordinal.
     println("People Table")
-    peopleSchemaRDD = peopleSchemaRDD.unionAll(peopleSchemaRDD)
+    val unionSchemaRDD = peopleSchemaRDD.unionAll(peopleSchemaRDD)
+
+    unionSchemaRDD.registerTempTable("people")
 
     val resultsPeople = sqlContext.sql("SELECT name FROM people ")
     resultsPeople.collect.foreach(println)

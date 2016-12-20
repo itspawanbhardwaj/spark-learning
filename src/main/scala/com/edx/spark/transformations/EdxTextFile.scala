@@ -6,7 +6,7 @@ object EdxTextFile {
 
   def main(args: Array[String]) {
 
-    val sc = new SparkContext("local", "filter")
+    val sc = new SparkContext("local", "wordCounts")
     val lines = sc.textFile("src/main/resources/employees.csv", 4)
     /*lins containing M*/
     lines.filter(text => text.contains("M")).collect.foreach(println)
@@ -17,8 +17,9 @@ object EdxTextFile {
     println("first line in the file : " + lines.first);
     println("no of lines containing M (records of male ) : " + lines.filter(text => text.contains("M")).count);
 
-    println("the line with the most words : "+lines.map(line => line.split(",").size).reduce((a, b) => if (a > b) a else b))
+    println("the line with the most words : " + lines.map(line => line.split(",").size).reduce((a, b) => if (a > b) a else b))
     println("One common data flow pattern is MapReduce, as popularized by Hadoop. Spark can implement MapReduce flows easily:")
-    //val wordCounts = lines.flatMap(line => line.split(" ")).map(word => (word, 1)).reduceByKey((a, b) => a + b)
+    val wordCounts = lines.flatMap(line => line.split(" ")).map(word => (word, 1)).reduceByKey((a, b) => a + b)
+    println(wordCounts)
   }
 }

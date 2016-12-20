@@ -7,6 +7,5 @@ object mapValues {
     val sc = new SparkContext("local", "mapValues")
     val a = sc.parallelize(List("dog", "tiger", "lion", "cat", "panther", "eagle"), 2)
     val b = a.map(x => (x.length, x))
-  //TODO  b.map
   }
 }

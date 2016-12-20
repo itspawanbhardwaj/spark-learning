@@ -31,7 +31,7 @@ object BDULab2 {
 
     println(endTrips.toDebugString);
 
-    println(startTrips.countAsync)
-    println(endTrips.countAsync)
+    println(startTrips.count)
+    println(endTrips.count)
   }
 }
