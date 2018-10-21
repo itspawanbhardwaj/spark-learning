@@ -2,9 +2,9 @@ name := "spark-learning"
 
 version := "1.0"
 
-scalaVersion := "2.10.4"
+scalaVersion := "2.11.4"
 
-val sparkVersion = "2.0.0"
+val sparkVersion = "2.3.1"
 
 resolvers ++= Seq(
 
@@ -18,6 +18,7 @@ libraryDependencies ++= Seq(
   "org.apache.spark" %% "spark-sql" % sparkVersion,
   "org.apache.spark" %% "spark-mllib" % sparkVersion,
   "org.apache.spark" %% "spark-streaming" % sparkVersion,
+  "org.apache.spark" %% "spark-hive" % sparkVersion,
   "com.microsoft.azure" % "spark-streaming-eventhubs_2.11" % "2.0.0",
   "com.microsoft.azure.sdk.iot" % "iot-service-client" % "1.7.23",
   "com.microsoft.azure.sdk.iot" % "iot-device-client" % "1.3.32",

@@ -12,7 +12,18 @@ object SparkDriver {
     SparkSession
       .builder()
       .appName(appName)
-      .master("local")
+      .master("local[*]")
+      .getOrCreate()
+  }
+
+  def getSparkSession(appName: String, isHive: Boolean): SparkSession = {
+    Logger.getLogger("org").setLevel(Level.OFF);
+    Logger.getLogger("akka").setLevel(Level.OFF);
+    SparkSession
+      .builder()
+      .appName(appName)
+      .enableHiveSupport()
+      .master("local[*]")
       .getOrCreate()
   }
 }

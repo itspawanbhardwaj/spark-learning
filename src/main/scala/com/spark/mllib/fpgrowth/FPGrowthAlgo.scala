@@ -33,10 +33,11 @@ object FPGrowthAlgo {
     Logger.getLogger("org").setLevel(Level.OFF);
     Logger.getLogger("akka").setLevel(Level.OFF);
     /*
-      * with transactio id : 
+      * with transactio id :
         */
     val config: Map[String, Any] =
-      Map("transactionId" -> "_c0",
+      Map(
+        "transactionId" -> "_c0",
         "product" -> "_c1",
         "separator" -> ",",
         "transactionIdExists" -> "true",
@@ -159,7 +160,7 @@ object FPGrowthAlgo {
 
     transactions
       .collect
-      .foreach(value => println(JavaConversions.asJavaList(value)))
+      .foreach(value => println(JavaConversions.asJavaCollection((value))))
     val fpg = new FPGrowth().setMinSupport(minSupport)
       .setNumPartitions(numPartition)
     //  transactions.collect.foreach(value => println(JavaConversions.asJavaList(value)))
@@ -172,7 +173,8 @@ object FPGrowthAlgo {
     val rules = model.generateAssociationRules(minConfidence);
     //rules.
     val rows = model.generateAssociationRules(minConfidence).map(rule =>
-      Row.fromSeq(Seq(rule.antecedent,
+      Row.fromSeq(Seq(
+        rule.antecedent,
         rule.consequent.mkString(" "),
         rule.confidence)))
     val schema = StructType(Array(
