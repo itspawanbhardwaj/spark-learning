@@ -14,8 +14,13 @@
   <classpathentry kind="lib" path="/root/.ivy2/cache/org.apache.commons/commons-compress/jars/commons-compress-1.4.1.jar"/>
   <classpathentry kind="lib" path="/root/.ivy2/cache/org.tukaani/xz/jars/xz-1.0.jar"/>
   <classpathentry kind="lib" path="/root/.ivy2/cache/org.apache.avro/avro-mapred/jars/avro-mapred-1.7.7-hadoop2.jar"/>
+<<<<<<< HEAD
   <classpathentry kind="lib" path="/root/.ivy2/cache/org.apache.avro/avro-ipc/jars/avro-ipc-1.7.7-tests.jar"/>
   <classpathentry kind="lib" path="/root/.ivy2/cache/org.apache.avro/avro-ipc/jars/avro-ipc-1.7.7.jar"/>
+=======
+  <classpathentry kind="lib" path="/root/.ivy2/cache/org.apache.avro/avro-ipc/jars/avro-ipc-1.7.7.jar"/>
+  <classpathentry kind="lib" path="/root/.ivy2/cache/org.apache.avro/avro-ipc/jars/avro-ipc-1.7.7-tests.jar"/>
+>>>>>>> 984080a34eb44a62f810526b3a12ddf008c3fa97
   <classpathentry kind="lib" path="/root/.ivy2/cache/com.twitter/chill_2.11/jars/chill_2.11-0.8.4.jar"/>
   <classpathentry kind="lib" path="/root/.ivy2/cache/com.twitter/chill-java/jars/chill-java-0.8.4.jar"/>
   <classpathentry kind="lib" path="/root/.ivy2/cache/com.esotericsoftware/kryo-shaded/bundles/kryo-shaded-3.0.3.jar"/>
@@ -90,7 +95,11 @@
   <classpathentry kind="lib" path="/root/.ivy2/cache/org.apache.spark/spark-network-shuffle_2.11/jars/spark-network-shuffle_2.11-2.3.1.jar"/>
   <classpathentry kind="lib" path="/root/.ivy2/cache/org.apache.spark/spark-unsafe_2.11/jars/spark-unsafe_2.11-2.3.1.jar"/>
   <classpathentry kind="lib" path="/root/.ivy2/cache/net.java.dev.jets3t/jets3t/jars/jets3t-0.9.4.jar"/>
+<<<<<<< HEAD
   <classpathentry kind="lib" path="/root/.ivy2/cache/commons-codec/commons-codec/jars/commons-codec-1.13.jar"/>
+=======
+  <classpathentry kind="lib" path="/root/.ivy2/cache/commons-codec/commons-codec/jars/commons-codec-1.11.jar"/>
+>>>>>>> 984080a34eb44a62f810526b3a12ddf008c3fa97
   <classpathentry kind="lib" path="/root/.ivy2/cache/javax.activation/activation/jars/activation-1.1.1.jar"/>
   <classpathentry kind="lib" path="/root/.ivy2/cache/org.bouncycastle/bcprov-jdk15on/jars/bcprov-jdk15on-1.52.jar"/>
   <classpathentry kind="lib" path="/root/.ivy2/cache/com.jamesmurty.utils/java-xmlbuilder/jars/java-xmlbuilder-1.1.jar"/>
@@ -211,9 +220,12 @@
   <classpathentry kind="lib" path="/root/.ivy2/cache/commons-logging/commons-logging/jars/commons-logging-1.2.jar"/>
   <classpathentry kind="lib" path="/root/.ivy2/cache/org.apache.thrift/libthrift/jars/libthrift-0.9.3.jar"/>
   <classpathentry kind="lib" path="/root/.ivy2/cache/org.apache.thrift/libfb303/jars/libfb303-0.9.3.jar"/>
+<<<<<<< HEAD
   <classpathentry kind="lib" path="/root/.ivy2/cache/org.apache.spark/spark-sql-kafka-0-10_2.11/jars/spark-sql-kafka-0-10_2.11-2.3.1.jar"/>
   <classpathentry kind="lib" path="/root/.ivy2/cache/org.apache.kafka/kafka-clients/jars/kafka-clients-0.10.0.1.jar"/>
   <classpathentry kind="lib" path="/root/.ivy2/cache/net.jpountz.lz4/lz4/jars/lz4-1.3.0.jar"/>
+=======
+>>>>>>> 984080a34eb44a62f810526b3a12ddf008c3fa97
   <classpathentry kind="lib" path="/root/.ivy2/cache/com.microsoft.azure/spark-streaming-eventhubs_2.11/jars/spark-streaming-eventhubs_2.11-2.0.0.jar"/>
   <classpathentry kind="lib" path="/root/.ivy2/cache/com.microsoft.azure.sdk.iot/iot-service-client/jars/iot-service-client-1.7.23.jar"/>
   <classpathentry kind="lib" path="/root/.ivy2/cache/com.microsoft.azure.sdk.iot/iot-deps/jars/iot-deps-0.0.1.jar"/>
